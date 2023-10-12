@@ -7,65 +7,52 @@ import NavBar from './components/NavBar.jsx'
 
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0)
-  const handleClickIncremente = () => {
-    setPokemonIndex (pokemonIndex + 1)
-  }
-  const handleClickDecremente = () => {
-    setPokemonIndex (pokemonIndex - 1)
-  }
-
+  // const [pokemonIndex, setPokemonIndex] = useState(0)
+  const [indexChoice, setIndexChoice]=useState(0)
   return  <div>
-    <PokemonCard pokemon ={pokemonList[pokemonIndex]} />
-    <NavBar pokemonList ={pokemonList} pokemonIndex={pokemonIndex} handleClickDecremente={handleClickDecremente} handleClickIncremente= {handleClickIncremente}/>
+    <PokemonCard pokemon ={pokemonList[indexChoice]}/>
+    <NavBar setIndexChoice={setIndexChoice} pokemonList ={pokemonList}/>
     </div>
-
-  // if ((pokemonIndex > 0) && (pokemonIndex < pokemonList.length -1)) {
-  //   return <div>
-  //     <div><PokemonCard pokemon ={pokemonList[pokemonIndex]} /></div>
-  //     <button onClick = {handleClickDecremente}>Précédent</button>
-  //     <button onClick = {handleClickIncremente}>Suivant</button>
-  //   </div>
-  // } else if (pokemonIndex <= 0) {
-  //   return <div>
-  //   <div><PokemonCard pokemon ={pokemonList[pokemonIndex]} /></div>
-  //   <button onClick = {handleClickIncremente}>Suivant</button>
-  //   </div>
-  // } else if (pokemonIndex >= pokemonList.length -1){
-  //   return <div>
-  //   <div><PokemonCard pokemon ={pokemonList[pokemonIndex]} /></div>
-  //   <button onClick = {handleClickDecremente}>Précédent</button>
-  //   </div>
-  // }
 }
   
-  
-
 export default App
 
 const pokemonList = [
   {
-      name: "bulbasaur",
+    id:0,  
+    name: "bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
     {
+      id:1,
       name: "charmander",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
     },
     {
+      id:2,
       name: "squirtle",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
     },
     {
+      id:3,
       name: "pikachu",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
     },
     {
+      id:4,
       name: "mew",
     },
   ];
 
+
+  // const handleClickDecremente = () => {
+  //   setPokemonIndex (pokemonIndex - 1)
+  // }
+// handleClickDecremente={handleClickDecremente} 
+// const handlePokemon = () => {
+  //   setPokemonIndex (pokemonList[pokemonIndex])
+  // }
